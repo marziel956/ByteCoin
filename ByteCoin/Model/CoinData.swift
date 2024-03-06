@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+struct CoinData: Codable{
+    
+    let name: String
+    let main: Main
+    let coin: [Coin]
+    
+    
+    
+}
+
+struct Main: Codable{
+    
+    let bnc: Float
+}
+
+
+struct Coin: Codable{
+    
+    let description: String
+    let id: Int
+}
