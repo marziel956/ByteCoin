@@ -26,13 +26,12 @@ struct CoinManager {
     var delegate: CoinManagerDelegate?
     
     
-    
-    
     func getCoinPrice(for currency: String){
         let urlString = "\(baseURL)/\(currency)?\(apiKey)"
         
         print(urlString)
         
+    performRequest(with: urlString)
         
     }
     
@@ -87,13 +86,14 @@ struct CoinManager {
             
             let coin = CoinModel(czas: time, waluta_1: asset_id_base, waluta_2: asset_id_quote, cena: rate)
             
-            //print(weather.conditionName)
-            //print(weather.temperatureString)
+            print(decodeData.time)
+            print(decodeData.asset_id_base)
+            print(decodeData.asset_id_quote)
+            print(decodeData.rate)
+            
+
             return coin
-            //            print(decodeData.main.temp)
-            //            print(decodeData.name)
-            //            print(decodeData.weather[0].description)
-            //            print(decodeData.weather[0].id)
+    
             
             
         }catch
