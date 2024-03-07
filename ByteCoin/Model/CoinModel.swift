@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+
+struct CoinModel{
+    
+    let czas: String
+    let waluta_1: String
+    let waluta_2: String
+    let cena: Float
+    
+    
+}
