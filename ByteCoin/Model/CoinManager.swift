@@ -35,16 +35,21 @@ struct CoinManager {
         
     }
     
+    
+    
+    
+    
+    
+    
     func performRequest(with urlString: String){
+        
         //1.Create a url
         if let url = URL(string: urlString){
             
             //2.Create a URLSession
-            
             let session = URLSession(configuration: .default)
             
             //3.Give the session a task
-            
             let task = session.dataTask(with: url) { data, response, error in
                 
                 if error != nil{
@@ -68,13 +73,15 @@ struct CoinManager {
         }
     }
     
+ 
     
-    func parseJSON(_ coinData: Data) -> CoinModel? {
+    
+    func parseJSON(_ data: Data) -> CoinModel? {
         
         let decoder = JSONDecoder()
         
         do{
-            let decodeData = try decoder.decode(CoinData.self, from: coinData)
+            let decodeData = try decoder.decode(CoinData.self, from: data)
             
             
             
@@ -93,8 +100,6 @@ struct CoinManager {
             
 
             return coin
-    
-            
             
         }catch
         {
